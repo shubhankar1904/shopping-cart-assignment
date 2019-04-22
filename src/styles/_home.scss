@@ -1,0 +1,123 @@
+@import "variables";
+
+
+.section-carousel{
+    box-shadow: 0 10px 10px -7px #7777;
+    .carousel{
+        margin-top: 10px;
+    }
+    margin:0 5px;
+    li{
+        background-color: $dark-grey;
+        border: 1px solid $grey;
+    }
+}
+
+.flex-category-container, .flex-category-container-alt {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    //align-items: stretch;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-category-container-alt{
+      .category{
+          order:2;
+          img{
+                
+                float:right;
+                clear:right;
+          }
+      }
+      .category-desc{
+          order:1;
+      }
+  }
+  .category-section{
+   
+    box-shadow: 0 10px 10px -7px #7777;
+    height: 20vw;
+    
+    .category{
+        flex: 1;
+        transform: translateY(25%);
+        img{
+           
+            width:50%;
+            height:auto;
+        }
+    }
+    .category-desc{
+        flex:1;
+        align-items: center;
+        
+        p, h4, button{
+            transform: translateY(25%);
+            text-align: center ;
+            
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+    .category-button{
+        background-color: $accent; 
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        padding : 10px;
+    }
+}
+
+
+@media (max-width: $breakpoint-tablet-potrait) {
+    .category-section{
+        height: 30vw;
+    }
+}
+@media (max-width: $breakpoint-phone) {
+    .category-section{
+        height: 40vw;
+    }
+    .category{
+        img{
+            width:auto;
+            height:100%;
+        }
+    }
+}
+@media (max-width: $breakpoint-small-phone) {
+    .category-section{
+        height: 50vw;
+    }
+    .category{
+        flex:1;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+    .category-desc{
+        flex:2;
+    }
+}
+@media (max-width: $breakpoint-smaller-phone) {
+    .category-section{
+        height: 70vw;
+    }
+    .category{
+        flex:1;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+    .category-desc{
+        flex:2;
+    }
+}

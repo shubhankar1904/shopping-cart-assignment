@@ -1,0 +1,28 @@
+
+{{#each products}}
+<div class="product-overview" id={{id}}>
+  <div class="product-name">
+      <h3>{{name}}</h3>
+  </div>
+  <div class="product">
+      <div class="product_img">
+          <img src="../../../{{imageURL}}"> 
+      </div>
+      <div class="product-desc">
+      
+          
+          {{description}}
+          
+          <button class="xsm-bn-btn">Buy Now @ Rs. {{price}}</button>
+      </div>
+      
+      
+      
+  </div>
+  <div class="atc"> 
+          <p>Rs. {{price}}</p>
+          <button class="bn-btn">Buy Now</button>
+          <button class="sm-bn-btn">Buy Now @ Rs. {{price}}</button>
+  </div>
+  </div>
+  {{/each}}
