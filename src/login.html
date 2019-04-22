@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <nav class="header">
+                <ul class="sub-nav">
+                    <li><a href=".\login.html" class="sub-nav-item">Sign in</a></li>
+                      <li><a href=".\register.html" class="sub-nav-item">Register</a></li>
+                </ul>
+              
+                <ul class="main-nav">
+  
+                    <li> <div class="logo"><img src="../static/images/logo.png"></div></li>
+                    <li><a href=".\index.html">Home</a></li>
+                    <li><a href=".\plp.html">Product</a></li>
+                    
+                     <li class="cart-icon-container" id="cart">
+                          <a href="#">
+                              <svg class="cart-icon" version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                                  <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                             </svg>
+                             
+                              Cart
+                          </a>
+                     </li>
+                    
+                    
+                </ul>
+              
+          </nav> 
+          <div id="myModal" class="modal">
+  
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="cart-header"><p>My Cart (1) Item </p></div>
+                <div class="item">
+                  <div class="item-image">
+                    <img src="../static/images/products/fruit-n-veg/apple.jpg">
+                </div>
+                  <div class="item-details">
+                    <div class="item-name">
+                        Washington Apples
+                    </div>
+                    <div class="item-qty-price">
+                      <div class="cart-edit-btn">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 476.737 476.737" style="enable-background:new 0 0 476.737 476.737;" xml:space="preserve">
+  
+                              <path  d="M238.369,0C106.726,0,0,106.726,0,238.369c0,131.675,106.726,238.369,238.369,238.369
+                                c131.675,0,238.369-106.694,238.369-238.369C476.737,106.726,370.043,0,238.369,0z M365.499,254.26h-254.26
+                                c-8.772,0-15.891-7.151-15.891-15.891c0-8.772,7.119-15.891,15.891-15.891h254.26c8.74,0,15.891,7.119,15.891,15.891
+                                C381.39,247.109,374.239,254.26,365.499,254.26z"/>
+  
+                          </svg>
+                      </div>
+                          1 
+                        <div class="cart-edit-btn">
+                          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+  
+                                  <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M382.5,280.5h-102v102h-51v-102
+                                    h-102v-51h102v-102h51v102h102V280.5z"/>
+  
+                              </svg>
+                        </div>
+  
+                          x Rs. 287
+                    </div>
+  
+                  </div>
+  
+                </div>
+                
+                <div class="offer-banner">
+                  <p>You wont find it cheaper anywhere</p>
+                </div>
+                <div class="checkout-container">
+                    <div class="promo-banner">
+                        <p>Promo code can be applied on checkout page</p>
+                    </div>
+                    <button class="checkout-button">Proceed to checkout</button>
+                </div>
+                
+              </div>
+            
+            </div>
+  
+
+    <div class="row">
+        <div class="login-container">
+            <div class="login-text">
+                <h2>Login</h2>
+                <p>Get access to your Orders, Wishlist, and Recommendations</p>
+            </div>
+            <div class="login-form">
+                <form>
+                    <div class="form-input">
+                        <label>
+                            <input type="email" required>
+                            <span class="placeholder">E-mail</span>
+                        </label>
+                    </div>
+                    <div class="form-input">
+                        <label>
+                                <input type="password" required>
+                                <span class="placeholder">Password</span>
+                        </label>
+                    </div>
+                    <input type="submit" value="Login" class="form-button-large">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+            <p>Copy right &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+</body>
+</html>
