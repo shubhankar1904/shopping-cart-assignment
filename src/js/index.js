@@ -64,9 +64,10 @@ var controller = (function() {
         xmlHttp.send( null );
         
         var categoriesJSON = JSON.parse(xmlHttp.responseText);
+        categoriesJSON.forEach(function(el){el.direction=1});
         var categoriesJSON = categoriesJSON.sort(function(a, b) {return a.order - b.order});
         var data = "{ \"categories\":"+JSON.stringify(categoriesJSON)+"}";
-        console.log(data);
+        //console.log(data);
         categoriesJSON = JSON.parse(data);
         var container = document.getElementById('categories-banners');
         container.innerHTML = categoriesBannerTemplate(categoriesJSON);

@@ -60,6 +60,9 @@ module.exports = {
           { test: /\.(handlebars|hbs)$/, 
             loader: "handlebars-loader",
             query:{
+              helperDirs: [
+                path.join(__dirname, 'templates','helpers')
+              ],
               partialDirs: [
                 path.join(__dirname, 'templates', 'partials')
             ]
