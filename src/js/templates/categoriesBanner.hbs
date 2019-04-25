@@ -3,19 +3,19 @@
 {{#each categories}}
     {{#if enabled}}
         
-                <section class="category-section row">
-                    <div class="flex-category-container-alt"> 
-                        <div class="category">
-                            <img src="../../../{{imageUrl}}">
-                        </div>
+        <section class="category-section row">
+            <div class="flex-category-container-alt"> 
+                <div class="category">
+                    <img src="../../../{{imageUrl}}">
+                </div>
 
-                        <div class="category-desc">
-                            <h4 class="category-heading">{{name}}</h4>
-                            <p class="category-text">{{description}}</p>
-                            <button class="category-button">Explore {{key}}</button>
-                        </div>
-                    </div>
-                </section>
+                <div class="category-desc">
+                    <h4 class="category-heading">{{name}}</h4>
+                    <p class="category-text">{{description}}</p>
+                    <button class="category-button">Explore {{key}}</button>
+                </div>
+            </div>
+        </section>
        
     {{/if}}
 {{/each}}

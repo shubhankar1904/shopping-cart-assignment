@@ -5,7 +5,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var handlebars = require('handlebars');
+var PrettierPlugin = require("prettier-webpack-plugin");
 
 
 module.exports = {
@@ -13,6 +13,11 @@ module.exports = {
     output:{
         path:path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js',
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
     },
     devServer:{
         contentBase: './dist'
@@ -52,7 +57,14 @@ module.exports = {
         new CopyWebpackPlugin([
           {from:'src/api',to:'api'} 
       ]), 
-        
+      new PrettierPlugin({
+        printWidth: 80,               
+        tabWidth: 2,                  
+        useTabs: false,               
+        semi: true,                   
+        encoding: 'utf-8',            
+        extensions: [ ".js", ".scss" ]
+      }),
     ],
     module:{ 
         
