@@ -13,16 +13,6 @@ document.body.insertAdjacentHTML("beforeend", footerTemplate());
 var cartViewObj = new cartView();
 var cartObj = new cart(cartViewObj);
 
-document.querySelector(".icon").onclick = function() {
-  console.log("hello");
-  var x = document.querySelector(".main-nav");
-  if (x.className === "main-nav") {
-    x.className += " responsive";
-  } else {
-    x.className = "main-nav";
-  }
-};
-
 var controller = (function() {
   const plpPage = new plpView();
 
@@ -132,6 +122,15 @@ var controller = (function() {
   return {
     init: function() {
       initCart();
+      document.querySelector(".icon").onclick = function() {
+        console.log("hello");
+        var x = document.querySelector(".main-nav");
+        if (x.className === "main-nav") {
+          x.className += " responsive";
+        } else {
+          x.className = "main-nav";
+        }
+      };
     },
     loadBanners: function() {
       loadBanners();
