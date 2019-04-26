@@ -12,7 +12,9 @@
 .sub-nav {
   margin: 0 2% 0 auto;
   float: right;
-
+  .icon {
+    display: none;
+  }
   li {
     display: inline-block;
     margin-left: 5px;
@@ -25,7 +27,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
+  display: inline-flex;
+  width: 50vw;
   flex-direction: row;
   align-items: center;
   .cart-icon-container {
@@ -64,8 +67,12 @@ nav {
 @media (max-width: $breakpoint-tablet-potrait) {
 }
 @media (max-width: $breakpoint-phone) {
-}
-@media (max-width: $breakpoint-small-phone) {
+  .clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
   .logo,
   .logo img {
     margin: 0;
@@ -76,10 +83,37 @@ nav {
     z-index: 1;
   }
   .main-nav {
+    float: right;
     a {
       padding: 5px 5px;
     }
   }
+  .main-nav li:not(:nth-last-child(1)) {
+    display: none;
+  }
+
+  .sub-nav .icon {
+    float: right;
+    display: block;
+    margin-left: 5px;
+    img {
+      height: 1.5em;
+    }
+  }
+
+  .main-nav.responsive:not(a) {
+    width: 100%;
+    display: block;
+  }
+  .main-nav.responsive li {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: $breakpoint-small-phone) {
 }
 @media (max-width: $breakpoint-smaller-phone) {
   .logo,

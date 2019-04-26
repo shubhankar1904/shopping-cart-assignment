@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "start1": "canned -p 5000 ./server",
-    "build1": "webpack --mode production",
     "build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "start": "cross-env NODE_ENV=production  webpack-dev-server  --config webpack.config.js --open"
@@ -15,12 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
-    "canned": "^0.3.12",
-    "flexbox": "0.0.3",
-    "html-loader": "^0.5.5",
-    "jquery": "^3.4.0",
-    "owl.carousel": "^2.3.4",
-    "slick-carousel": "^1.8.1"
+    "html-loader": "^0.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

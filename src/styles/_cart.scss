@@ -31,11 +31,13 @@
   font-size: 28px;
   font-weight: bold;
   margin-right: 2px;
+  background-color: transparent;
+  border: transparent;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #555;
   text-decoration: none;
   cursor: pointer;
 }
