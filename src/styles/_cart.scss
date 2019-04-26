@@ -9,8 +9,8 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -18,11 +18,10 @@
   background-color: rgb(206, 206, 206);
   margin: 15vh 10vw auto auto; /* 15% from the top and centered */
   width: 30%; /* Could be more or less, depending on screen size */
-  height:85vh;
-  
+  height: 85vh;
 }
-.items-container{
-  height: inherit;
+.items-container {
+  overflow-y: scroll;
 }
 
 /* The Close Button */
@@ -32,119 +31,108 @@
   font-size: 28px;
   font-weight: bold;
   margin-right: 2px;
+  background-color: transparent;
+  border: transparent;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #555;
   text-decoration: none;
   cursor: pointer;
 }
 
-.cart-header{
+.cart-header {
   background-color: #000;
   padding: 0.75em;
-  p{
-    margin-top:0;
+  p {
+    margin-top: 0;
     color: #fff;
     display: block;
-
   }
 }
-.modal-content{
-  
-  .item{
+.modal-content {
+  .item {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: #fff;
-    margin:4px 0;
+    margin: 4px 0;
     padding: 2px;
-    .item-image{
-      flex:1;
-      max-width:25%;
+    .item-image {
+      flex: 1;
+      max-width: 25%;
       display: inline-block;
-      img{
-        max-width:100%;
-        height:auto;
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
-    .item-details{
-      max-width:75%;
+    .item-details {
+      max-width: 75%;
       display: inline-block;
-      flex:4;
-      .cart-edit-btn{
+      flex: 4;
+      .cart-edit-btn {
         display: inline;
-        
-        svg{
-          
+
+        svg {
           height: 1em;
           width: auto;
           fill: $accent;
         }
-
+      }
+      span {
+        float: right;
+        margin-right: 5px;
       }
     }
   }
 
-  .offer-banner{
-    background-color: #fff; 
+  .offer-banner {
+    background-color: #fff;
     text-align: center;
-    padding:1px;
-    p{
-      margin:0;
+    padding: 1px;
+    p {
+      margin: 0;
     }
   }
   position: relative;
-  .checkout-container{
-    
-    width:100%;
+  .checkout-container {
+    width: 100%;
     background-color: #fff;
     position: absolute;
     bottom: 0;
-    .promo-banner{
+    .promo-banner {
       text-align: center;
       font-size: 80%;
       padding: 2px;
-      p{
-        margin:0;
+      p {
+        margin: 0;
       }
     }
-      .checkout-button{
-      margin:0 2%;
-      
+    .checkout-button {
+      margin: 0 2%;
+
       border-radius: 4px;
-      background-color: $accent; 
+      background-color: $accent;
       border: none;
       color: white;
       position: relative;
-      width:96%;
+      width: 96%;
       text-decoration: none;
       display: inline-block;
-      padding : 10px;
+      padding: 10px;
       text-align: center;
-      height:3em;
-      }
+      height: 3em;
+    }
   }
 }
 
-
-@media (max-width: $breakpoint-tablet-potrait) {
-    
-}
 @media (max-width: $breakpoint-phone) {
   .modal-content {
-    
     margin: auto auto; /* 15% from the top and centered */
-    
+
     width: 100%; /* Could be more or less, depending on screen size */
-    height:100%;
+    height: 100%;
   }
-   
-}
-@media (max-width: $breakpoint-small-phone) {
-  
-}
-@media (max-width: $breakpoint-smaller-phone) {
-    
 }

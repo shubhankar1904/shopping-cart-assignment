@@ -1,53 +1,58 @@
-export default class cartView{
-    
-    constructor(){
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", "api/products/index.get.json", false ); // false for synchronous request
-        xmlHttp.send( null );
-        this.productsJSON = JSON.parse(xmlHttp.responseText);
-    }
-    setEditQtyBtnListeners(cart){
-        var tmp=document.querySelectorAll('.cart-edit-btn.plus');
-        for (var i = 0, element; element = tmp[i]; i++) {
-            element.onclick = function(event){
-                var id = (event.target.id || event.target.parentElement.id).toString();
-                id = id.split("_")[0];
-                cart.addItem(id);
-            };
-        }
-        
-        tmp=document.querySelectorAll('.cart-edit-btn.min');
-        for (var i = 0, element; element = tmp[i]; i++) {
-            element.onclick = function(event){
-                var id = (event.target.id || event.target.parentElement.id).toString();
-                id = id.split("_")[0];
-                cart.deleteItem(id);
-            };
-        }
+export default class cartView {
+  constructor() {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "api/products/index.get.json", false); // false for synchronous request
+    xmlHttp.send(null);
+    this.productsJSON = JSON.parse(xmlHttp.responseText);
+  }
+
+  setEditQtyBtnListeners(cart) {
+    var tmp = document.querySelectorAll(".cart-edit-btn.plus");
+    for (var i = 0, element; (element = tmp[i]); i++) {
+      element.onclick = function(event) {
+        var id = (event.target.id || event.target.parentElement.id).toString();
+        id = id.split("_")[0];
+        cart.addItem(id);
+      };
     }
 
-    renderCartItems(cart){
- 
-        var itemsContainer = document.querySelector('.items-container');
-        
-        while (itemsContainer.firstChild) {
-            
-            itemsContainer.removeChild(itemsContainer.firstChild);
-        }
-        
-        for(var item in cart.cartItems){
-            
-            var div = document.createElement('div');
-            div.className = 'item';
-           
+    tmp = document.querySelectorAll(".cart-edit-btn.min");
+    for (var i = 0, element; (element = tmp[i]); i++) {
+      element.onclick = function(event) {
+        var id = (event.target.id || event.target.parentElement.id).toString();
+        id = id.split("_")[0];
+        cart.deleteItem(id);
+      };
+    }
+  }
 
-            var productDetails = this.productsJSON.filter(function(el){
-                return el.id == item;
-            })[0];
-            
-            
-        
-        var html = ` 
+  renderCartItems(cart) {
+    var itemsContainer = document.querySelector(".items-container");
+
+    while (itemsContainer.firstChild) {
+      itemsContainer.removeChild(itemsContainer.firstChild);
+    }
+    var totalItems = 0;
+    for (var item in cart.cartItems) {
+      totalItems += cart.cartItems[item];
+    }
+    document.querySelector(".cart-header").firstElementChild.innerHTML =
+      "My Cart: ( " + totalItems + " ) Items";
+    document.querySelector(
+      ".cart-icon-container"
+    ).firstElementChild.lastElementChild.innerHTML = +totalItems + " Items";
+
+    for (var item in cart.cartItems) {
+      var div = document.createElement("div");
+      div.className = "item";
+
+      var productDetails = this.productsJSON.filter(function(el) {
+        return el.id == item;
+      })[0];
+
+      var totalCost = productDetails.price * cart.cartItems[item];
+
+      var html = ` 
         <div class="item-image">
           <img src="${productDetails.imageURL}">
       </div>
@@ -81,18 +86,19 @@ export default class cartView{
               </div>
 
                 x Rs. ${productDetails.price}
+                <span>Rs. ${totalCost}</span>
           </div>
-
+          
+          
         </div>
         `;
-        
-        div.innerHTML = html;
-        
-        document.querySelector('.items-container').insertAdjacentElement('beforeend',div) 
 
-       
-        }
-        this.setEditQtyBtnListeners(cart);
+      div.innerHTML = html;
+
+      document
+        .querySelector(".items-container")
+        .insertAdjacentElement("beforeend", div);
     }
-   
+    this.setEditQtyBtnListeners(cart);
+  }
 }

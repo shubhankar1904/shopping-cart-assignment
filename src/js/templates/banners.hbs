@@ -1,7 +1,21 @@
 
-{{#each banners}}
-
-<div class="item">
-    <img src="../../../{{bannerImageUrl}}" alt="{{bannerImageAlt}}">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                {{#each banners}}
+                    <li data-target="#myCarousel" data-slide-to="{{order}}"></li>
+                 {{/each}}
+              </ol>
+            
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                    {{#each banners}}
+                        <div class="item">
+                            <img src="../../../{{bannerImageUrl}}" alt="{{bannerImageAlt}}">
+                        </div>
+                    {{/each}}
+              </div>
+            
+            
 </div>
-{{/each}}
+
