@@ -11,7 +11,13 @@
               <div class="carousel-inner">
                     {{#each banners}}
                         <div class="item">
-                            <img src="../../../{{bannerImageUrl}}" alt="{{bannerImageAlt}}">
+                            <!--<img src="../../../{{bannerImageUrl}}" alt="{{bannerImageAlt}}">-->
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="../../../{{bannerImageUrl}}/1024.jpg">
+                                <source media="(min-width: 768px)" srcset="../../../{{bannerImageUrl}}/768.jpg">
+                                <source media="(min-width: 600px)" srcset="../../../{{bannerImageUrl}}/600.jpg">
+                                <img src="../../../{{bannerImageUrl}}/480.jpg" alt="{{bannerImageAlt}}">
+                            </picture>
                         </div>
                     {{/each}}
               </div>

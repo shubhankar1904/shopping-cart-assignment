@@ -4,16 +4,25 @@
 @import "cart";
 @import "plp";
 @import "forms";
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+@import url("./vendor/carousel.scss");
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500,700");
 
 * {
   box-sizing: border-box;
 }
-body {
+body,
+p,
+button {
   font-family: "Dosis", sans-serif;
-  line-height: 1.6;
+  line-height: 1.4;
   margin: 0;
-  min-height: 100%;
+}
+button {
+  background-color: $accent;
+}
+button:focus,
+button:hover {
+  background: $accent_onclick;
 }
 a {
   text-decoration: none;
@@ -25,10 +34,14 @@ a {
 }
 
 footer {
-  background: #888888;
+  background: $darker-grey;
   color: #fff;
   display: block;
   margin-bottom: -50%;
   width: 100%;
   text-align: center;
+}
+
+.hide {
+  display: none;
 }

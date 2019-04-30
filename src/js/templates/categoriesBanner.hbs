@@ -6,13 +6,22 @@
         <section class="category-section row">
             <div class="flex-category-container-alt"> 
                 <div class="category">
-                    <img src="../../../{{imageUrl}}">
+ 
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="../../../{{imageUrl}}/400.png">
+                        <source media="(min-width: 768px)" srcset="../../../{{imageUrl}}/340.png">
+                        <source media="(min-width: 600px)" srcset="../../../{{imageUrl}}/230.png">
+                        <img src="../../../{{imageUrl}}/100.png" alt="Flowers">
+                    </picture>
+
+
+                    <!--<img src="../../../{{imageUrl}}">-->
                 </div>
 
                 <div class="category-desc">
                     <h4 class="category-heading">{{name}}</h4>
                     <p class="category-text">{{description}}</p>
-                    <button class="category-button">Explore {{key}}</button>
+                    <button class="category-button" onclick="location.href='../../plp.html?id={{id}}';">Explore {{key}}</button>
                 </div>
             </div>
         </section>

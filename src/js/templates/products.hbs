@@ -6,7 +6,14 @@
   </div>
   <div class="product">
       <div class="product_img">
-          <img src="../../../{{imageURL}}"> 
+
+          <picture>
+            <source media="(min-width: 1024px)" srcset="../../../{{imageURL}}/200.jpg">
+            <source media="(min-width: 768px)" srcset="../../../{{imageURL}}/200.jpg">
+            <source media="(min-width: 600px)" srcset="../../../{{imageURL}}/300.jpg">
+            <img src="../../../{{imageURL}}/300.jpg" >
+        </picture>
+        <!--  <img src="../../../{{imageURL}}"> -->
       </div>
       <div class="product-desc">
       

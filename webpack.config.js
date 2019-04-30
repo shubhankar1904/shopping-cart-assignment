@@ -13,6 +13,8 @@ module.exports = {
     output:{
         path:path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js',
+        libraryTarget: 'var',
+        library: 'EntryPoint'
     },
     optimization: {
       splitChunks: {
