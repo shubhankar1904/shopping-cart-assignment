@@ -60,7 +60,7 @@ export default class cartView {
   getItemHTML(cart, productDetails, item, totalCost) {
     var html = ` 
     <div class="item-image">
-      <picture>
+      <picture tabindex="0">
           <source media="(min-width: 1024px)" srcset="../../../${
             productDetails.imageURL
           }/100.jpg">
@@ -70,17 +70,19 @@ export default class cartView {
           <source media="(min-width: 600px)" srcset="../../../${
             productDetails.imageURL
           }/300.jpg">
-          <img src="../../../${productDetails.imageURL}/100.jpg" alt="Item">
+          <img src="../../../${productDetails.imageURL}/100.jpg" alt="${{
+      name
+    }}">
       </picture>
   </div>
     <div class="item-details">
-      <div class="item-name">
+      <div class="item-name" tabindex="0">
           ${productDetails.name}
       </div>
       <div class="item-qty-price">
-        <div class="cart-edit-btn min">
+        <div class="cart-edit-btn min" >
 
-        <svg version="1.1" id="${item}_min" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg version="1.1" id="${item}_min" tabindex="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 476.737 476.737" style="enable-background:new 0 0 476.737 476.737;" xml:space="preserve">
 
   <path d="M238.369,0C106.726,0,0,106.726,0,238.369c0,131.675,106.726,238.369,238.369,238.369
@@ -91,9 +93,11 @@ viewBox="0 0 476.737 476.737" style="enable-background:new 0 0 476.737 476.737;"
         </svg>
          
         </div>
-            ${cart.cartItems[item]} 
+           <div style="display:inline" tabindex="0"> ${
+             cart.cartItems[item]
+           } </div>
           <div class="cart-edit-btn plus">
-            <svg version="1.1" id="${item}_plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <svg version="1.1" id="${item}_plus"  tabindex="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                   width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
 
                     <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M382.5,280.5h-102v102h-51v-102
@@ -103,7 +107,7 @@ viewBox="0 0 476.737 476.737" style="enable-background:new 0 0 476.737 476.737;"
           </div>
 
             x Rs. ${productDetails.price}
-            <span>Rs. ${totalCost}</span>
+            <span tabindex="0">Rs. ${totalCost}</span>
       </div>
       
       

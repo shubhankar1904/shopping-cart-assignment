@@ -6,14 +6,11 @@ export default class cart {
     } else {
       this.cartItems = JSON.parse(sessionStorage.cart);
     }
-    this.cartViewObj = cartViewObj;
-    this.cartViewObj.renderCartItems(this);
   }
 
   addItem(id) {
     this.cartItems[id] = this.cartItems[id] ? this.cartItems[id] + 1 : 1;
     sessionStorage.cart = JSON.stringify(this.cartItems);
-    this.cartViewObj.renderCartItems(this);
   }
 
   deleteItem(id) {
@@ -22,6 +19,5 @@ export default class cart {
       delete this.cartItems[id];
       sessionStorage.cart = JSON.stringify(this.cartItems);
     }
-    this.cartViewObj.renderCartItems(this);
   }
 }

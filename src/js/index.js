@@ -13,7 +13,7 @@ document.body.insertAdjacentHTML("afterbegin", headerTemplate());
 document.body.insertAdjacentHTML("beforeend", footerTemplate());
 
 const cartViewObj = new cartView();
-const cartObj = new cart(cartViewObj);
+const cartObj = new cart();
 const plpPage = new plpView();
 
 var controller = (function() {
@@ -65,6 +65,7 @@ var controller = (function() {
           event.target.parentNode.parentNode.parentNode.id ||
             event.target.parentNode.parentNode.id
         );
+        cartViewObj.renderCartItems(cartObj);
       }
 
       if (
@@ -136,17 +137,24 @@ var controller = (function() {
         var id = (event.target.id || event.target.parentElement.id).toString();
         id = id.split("_")[0];
         cartObj.addItem(id);
+        cartViewObj.renderCartItems(cartObj);
       } else if (opr == "min") {
         var id = (event.target.id || event.target.parentElement.id).toString();
         id = id.split("_")[0];
         cartObj.deleteItem(id);
+        cartViewObj.renderCartItems(cartObj);
       }
     };
+  }
+
+  function initiateCart() {
+    cartViewObj.renderCartItems(cartObj);
   }
 
   return {
     init: function() {
       initiateEventHandlers();
+      initiateCart();
     },
     loadBanners: function() {
       loadBanners();
