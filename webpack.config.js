@@ -13,6 +13,8 @@ module.exports = {
     output:{
         path:path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js',
+        libraryTarget: 'var',
+        library: 'EntryPoint'
     },
     optimization: {
       splitChunks: {
@@ -28,7 +30,7 @@ module.exports = {
         filename: 'index.html',
         template: './src/index.html',
     }),
-     
+        
         new HtmlWebpackPlugin({
             filename: 'plp.html',
             template: './src/plp.html',

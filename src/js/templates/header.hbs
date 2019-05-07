@@ -3,11 +3,21 @@
                   <li><a href=".\login.html" class="sub-nav-item">Sign in</a></li>
                     <li><a href=".\register.html" class="sub-nav-item">Register</a></li>
                       <a class ="icon">
+                        
                            <img src="../../../static/images/menu.png" alt="menu"/>
 
                       </a>
               </ul>
-            <div class="logo"><img src="../static/images/logo.png"></div>
+            <div class="logo"><a href=".\index.html">
+                <picture>
+            <source media="(min-width: 1024px)" srcset="../static/images/logo_2x.png">
+            <source media="(min-width: 768px)" srcset="../static/images/logo_2x.png">
+            <source media="(min-width: 600px)" srcset="../static/images/logo.png">
+            <img src="../static/images/logo.png" >
+        </picture>
+              
+              
+              </a></div>
               <ul class="main-nav">
                   <li><a href=".\index.html">Home</a></li>
                   <li><a href=".\plp.html" class="plp_page_link">Product</a></li>
@@ -33,15 +43,16 @@
           <div class="modal-content">
             <button class="close">&times;</button>
             <div class="cart-header"><p>My Cart ( 0 ) Item </p></div>
-            <div class="items-container"></div>
-            <div class="offer-banner">
-              <p>You wont find it cheaper anywhere</p>
+            <div class="items-container">
+
+           
             </div>
+           
             <div class="checkout-container">
                 <div class="promo-banner">
                     <p>Promo code can be applied on checkout page</p>
                 </div>
-                <button class="checkout-button">Proceed to checkout</button>
+                <button class="checkout-button"><span class="proceed">Proceed to checkout</span><span class="total"></span></button>
             </div>
             
           </div>

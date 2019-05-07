@@ -15,10 +15,10 @@
                 <p>We do not share your personal details with anyone.</p>
             </div>
             <div class="login-form">
-                <form>
+                <form action="./index.html">
                     <div class="form-input">
                         <label>
-                            <input type="text" required>
+                            <input type="text"  required>
                             <span class="placeholder">First Name</span>
                         </label>
                     </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-input">
                         <label>
-                                <input type="password" required>
+                                <input type="password" minlength="6" pattern="\w{6,}" required>
                                 <span class="placeholder">Password</span>
                         </label>
                     </div>
