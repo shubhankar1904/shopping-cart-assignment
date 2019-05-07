@@ -30,7 +30,7 @@ module.exports = {
         filename: 'index.html',
         template: './src/index.html',
     }),
-     
+        
         new HtmlWebpackPlugin({
             filename: 'plp.html',
             template: './src/plp.html',

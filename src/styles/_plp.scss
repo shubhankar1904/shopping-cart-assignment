@@ -67,6 +67,7 @@
     li:hover,
     li:visited {
       text-decoration: none;
+      background-color: $accent;
       color: $darker-grey;
     }
   }
